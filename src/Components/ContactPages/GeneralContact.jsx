@@ -1,0 +1,24 @@
+import Contact from "./Contact";
+
+const GeneralContact = (props) => {
+  return (
+    <div
+      className="col-12 py-2"
+      style={{ borderRadius: "20px", backgroundColor: "#323637" }}
+    >
+      <div className="text-center text-white-50">General</div>
+      <div className="p-4">
+        {props.contacts.map((contact, index) => (
+          <Contact
+            onClickFavorite={props.onClickFavorite}
+            onClickDelete={props.onClickDelete}
+            onClickEdit={props.onClickEdit}
+            contact={contact}
+            key={index}
+          ></Contact>
+        ))}
+      </div>
+    </div>
+  );
+};
+export default GeneralContact;
